@@ -1,7 +1,7 @@
 const diveLayer = L.layerGroup();
 
 const diveIcon = L.icon({
-    iconUrl: '/assets/dive.svg',
+    iconUrl: '/dive-sand-map/assets/dive.svg',
     iconSize: [50, 50],
     iconAnchor: [25, 25],
     popupAnchor: [0, -25],
@@ -11,7 +11,7 @@ function onEachFeature(feature, layer) {
 	layer.bindPopup(feature.properties.date);
 }
 
-$.getJSON("/assets/dives.geojson", function(data){
+$.getJSON("/dive-sand-map/assets/dives.geojson", function(data){
 	L.geoJSON(data, {
 
 		pointToLayer: function (feature, latlng) {
@@ -25,13 +25,13 @@ $.getJSON("/assets/dives.geojson", function(data){
 const sampleLayer = L.layerGroup();
 
 const sampleIcon = L.icon({
-    iconUrl: '/assets/sample.svg',
+    iconUrl: '/dive-sand-map/assets/sample.svg',
     iconSize: [50, 50],
     iconAnchor: [25, 25],
     popupAnchor: [0, -25],
 });
 
-$.getJSON("/assets/samples.geojson", function(data){
+$.getJSON("/dive-sand-map/assets/samples.geojson", function(data){
 	L.geoJSON(data, {
 
 		pointToLayer: function (feature, latlng) {
